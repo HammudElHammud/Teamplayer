@@ -5,6 +5,5 @@
 - Run `run composer install` to install all the dependencies
 - Run `php artisan setup` to setup the project
 - Run `php artisan serve` to run the project
-- Run `npm run dev` to run vite
 
 ## License
