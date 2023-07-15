@@ -783,20 +783,21 @@
 <body class="antialiased">
 <div
     class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-    <div class="max-w-7xl mx-auto p-6 lg:p-1">
+    <div class="max-w-7xl mx-aut  ">
 
         <div class="mt-1">
-            <p> First team :</p>
-            @foreach($team_1['players'] as $player)
-                <p>{{$player['name']}}: {{$player['rating']}}</p>
+            <h2 style="font-weight: bold">First Team:</h2>
+            @foreach($firstTeam->players as $key => $player)
+                <p>{{$player->name . ':' . $player->rating}} </p>
             @endforeach
-            <p>The sum of first team is: {{array_sum($team_1->players->pluck('rating')->toArray())/7}}</p>
-            <p> Second  team :</p>
-            @foreach($team_2['players'] as $player)
-                <p>{{$player['name']}}: {{$player['rating']}}</p>
+            <p>The sum of first team is: {{count($firstTeam->players)}}</p>
+        </div>
+        <div class="mt-1">
+            <h2 style="font-weight: bold">Second Team:</h2>
+            @foreach($secondTeam->players as $key => $player)
+                <p>{{$player->name . ':' . $player->rating}} </p>
             @endforeach
-            <p>The sum of second team is: {{array_sum($team_1->players->pluck('rating')->toArray())/7}}</p>
-
+            <p>The sum of first team is: {{count($secondTeam->players)}}</p>
         </div>
 
     </div>

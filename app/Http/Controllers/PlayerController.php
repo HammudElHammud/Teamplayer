@@ -9,11 +9,10 @@ class PlayerController extends Controller
 {
     public function index()
     {
-        $teams = Team::query()->with('players')->get();
-
+        $teams = Team::query()->withCount('players')->get();
         return view('index' , [
-            'team_1' => $teams[0],
-            'team_2' => $teams[1],
+            'firstTeam' => $teams[0],
+            'secondTeam' => $teams[1],
         ]);
     }
 }
